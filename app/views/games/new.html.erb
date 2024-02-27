@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="center">
+    <h1 class="bottom-margin">New game</h1>
+    <ul class="flex-accross bottom-margin">
+      <% @letters.each_with_index do |x, index| %>
+        <li class="green-box bottom-margin"><%= x %></li>
+      <% end %>
+    </ul>
+    <p>Make the longest word possible with the given letters:</p>
+    <form action="/score" method="TODO" data-turbo="false">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" name="question" value="<%= params[:question] %>" placeholder="Answer Quick!">
+      <input type="submit" value="Go">
+    </form>
+  </div>
+</div>
